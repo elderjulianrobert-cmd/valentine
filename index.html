@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffd6e8;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    border: 4px solid #ff99cc;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #cc0066;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 220px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    min-width: 120px;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background: #ff3399;
+    color: white;
+}
+
+#yesBtn:hover {
+    transform: scale(1.1);
+}
+
+#noBtn {
+    background: #ffb3d9;
+    color: #99004d;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1 id="question">Will you be my Valentine? 🎀</h1>
+
+    <img id="gif" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
+
+    <div class="buttons">
+        <button id="yesBtn">Yes 💗</button>
+        <button id="noBtn">No</button>
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const gif = document.getElementById("gif");
+const question = document.getElementById("question");
+
+const phrases = [
+    "Are you sure? :(",
+    "Really sure? 🥺",
+    "That hurts 💔",
+    "Please think again...",
+    "I'll wait 💭"
+];
+
+let index = 0;
+
+noBtn.addEventListener("click", () => {
+    if (index < phrases.length) {
+        noBtn.textContent = phrases[index];
+        index++;
+    }
+});
+
+yesBtn.addEventListener("click", () => {
+    question.textContent = "You just made me the happiest person 💞";
+    gif.src = "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif";
+    noBtn.style.display = "none";
+});
+</script>
+
+</body>
+</html>
